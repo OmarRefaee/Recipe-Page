@@ -1,0 +1,16 @@
+// Import Fonts
+@font-face {
+    font-family: "Outfit";
+    src: url("../assets/fonts/outfit/Outfit-VariableFont_wght.ttf");
+}
+
+@font-face {
+    font-family: "Young Serif";
+    src: url("../assets/fonts/young-serif/YoungSerif-Regular.ttf");
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Outfit", sans-serif;
+    transition: 0.3s ease-in-out;
+}

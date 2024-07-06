@@ -1,0 +1,198 @@
+@use "./SASS/Helpers/global" as *;
+@use "./SASS/Helpers/mixins" as *;
+@use "./SASS/Variables/colors" as *;
+@use "./SASS/Layout/footer" as *;
+
+%ul {
+    padding-left: 25px;
+    list-style-type: none;
+    padding: 0;
+    li {
+        display: flex;
+        align-items: center;
+        &::before {
+            content: "\2022";
+            margin-right: 1rem;
+            font-size: 1.5rem;
+        }
+        padding: 0 10px;
+        margin-bottom: 10px;
+        line-height: 23px;
+    }
+}
+
+%h2 {
+    color: $nutmeg;
+    font-family: "Young Serif";
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+body {
+    background-color: $eggshell;
+    margin: 0;
+    padding: 0;
+    @include breakpoints(large, small, medium) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+main {
+    background-color: $white;
+    color: $wenge-brown;
+    @include breakpoints(large, small, medium) {
+        max-width: 735.6px;
+        margin-top: 120.8px;
+        padding: 38.4px;
+        padding-bottom: 25px;
+        border-radius: 22px;
+        .heroImage {
+            border-radius: 12px;
+        }
+        .container {
+            padding: 33px 0 0 0;
+        }
+        h1 {
+            font-size: 40px;
+        }
+    }
+}
+
+.container {
+    padding: 33px;
+}
+
+.heroImage {
+    width: 100%;
+}
+
+h1 {
+    font-family: "Young Serif";
+    color: $dark-charcoal;
+    margin-top: 0;
+    font-size: 36px;
+    line-height: 38px;
+    font-weight: 500;
+}
+
+.description {
+    font-size: 15.8px;
+    line-height: 24px;
+    font-weight: 500;
+    margin-bottom: 27px;
+}
+
+.prepT {
+    background-color: $rose-white;
+    padding: 22px 22px 5px 22px;
+    border-radius: 12px;
+    h2 {
+        color: $dark-raspberry;
+        margin: 0;
+        font-size: 20px;
+    }
+    ul {
+        @extend %ul;
+        // padding-left: 25px;
+        // list-style-type: none;
+        // padding: 0;
+        li {
+            // display: flex;
+            // align-items: center;
+            &::before {
+                // content: "\2022";
+                // margin-right: 1rem;
+                // font-size: 1.5rem;
+                color: $dark-raspberry;
+            }
+            div {
+                padding: 0 10px;
+            }
+            span {
+                font-weight: bold;
+            }
+            // padding: 0 10px;
+            // margin-bottom: 10px;
+            // line-height: 23px;
+        }
+    }
+}
+
+.ingredients {
+    h2 {
+        @extend %h2;
+    }
+    ul {
+        @extend %ul;
+        li {
+            &::before {
+                color: $nutmeg;
+                margin-right: 1.5rem;
+            }
+            color: $wenge-brown;
+        }
+    }
+}
+
+hr {
+    margin: 30px 0;
+    border: 0.5px solid $light-grey;
+}
+
+.instructions {
+    h2 {
+        @extend %h2;
+        margin-bottom: 0;
+    }
+    ol {
+        margin: 0px;
+        padding: 0 25px;
+        padding-right: 0px;
+        li {
+            padding: 13px 0 0 14px;
+            line-height: 23px;
+            @include breakpoints(large, small, medium) {
+                padding-right: 5px;
+            }
+            &::marker {
+                color: $nutmeg;
+                font-weight: bold;
+                margin-right: 20px;
+            }
+            span {
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.nutrition {
+    h2 {
+        @extend %h2;
+    }
+    table {
+        width: 100%;
+        td {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            color: $nutmeg;
+            font-weight: bold;
+            padding: 10px 0;
+            border-bottom: 1px solid $light-grey;
+            padding-left: 25px;
+            &:last-child {
+                border-bottom: none;
+            }
+            &::before {
+                content: attr(data-cell);
+                color: $wenge-brown;
+                margin-bottom: 10px;
+                font-weight: normal;
+            }
+        }
+    }
+}
