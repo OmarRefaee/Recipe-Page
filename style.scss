@@ -8,8 +8,9 @@
     list-style-type: none;
     padding: 0;
     li {
-        display: flex;
-        align-items: center;
+        // display: flex;
+        // align-items: center;
+        @include flex(row, flex-start, center);
         &::before {
             content: "\2022";
             margin-right: 1rem;
@@ -34,10 +35,7 @@ body {
     margin: 0;
     padding: 0;
     @include breakpoints(large, small, medium) {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
+        @include flex(column);
     }
 }
 
